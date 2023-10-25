@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2023 Bradley Larrick. All rights reserved.
+
+  Licensed under the Apache License v2.0
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.natuna.tools</groupId>
+	<artifactId>testjxr</artifactId>
+	<name>Test JXR Plugin</name>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+	<description>A test project to demonstrate issue with maven-jxr-plugin.</description>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<inceptionYear>2023</inceptionYear>
+
+	<organization>
+		<name>Bradley Larrick</name>
+	</organization>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+
+		<java.version>8</java.version>
+		<maven.compiler.failOnWarning>false</maven.compiler.failOnWarning>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.4.5</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>dependency-info</report>
+							<report>modules</report>
+							<report>dependency-management</report>
+							<report>dependencies</report>
+							<report>dependency-convergence</report>
+							<report>plugin-management</report>
+							<report>plugins</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<!-- Generate cross-reference reports -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<linkJavadoc>false</linkJavadoc>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>jxr-no-fork</report>
+							<report>test-jxr-no-fork</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+
+		</plugins>
+	</reporting>
+</project>
