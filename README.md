@@ -6,7 +6,7 @@ multiple `@SuppressWarnings` annotations.
 ## My Environment
 
 * Windows 10 Pro
-* JDK 11
+* JDK 11 (or 17 or 20)
 * Maven v3.9.5
 * maven-jxr-plugin v3.3.1
 
